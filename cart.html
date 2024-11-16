@@ -1,0 +1,136 @@
+<html>
+<head>
+    <title>Vogue Vault - Cart</title>
+    <style>
+        body {font-family: Arial, sans-serif; line-height: 1.6; background-color:#f0f0f0;}
+        header {background-color:violet; color:black; text-align:center; padding: 10px 0;}
+        .product { display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 20px; }
+        .product .item { flex: 0 2 calc(18.05% - 20px); margin-bottom: 20px; text-align: center; background-color: white; padding: 10px; border-radius: 5px; }
+        .product .item img { max-width: 70%; height: auto; border-radius: 5px; margin-bottom: 10px; }
+        nav { background-color: beige; text-align: center; }
+        nav a { color: black; }
+        nav a:hover { text-decoration: underline; }
+        footer { background-color: #2C2D2D; text-align: center; }
+        h4 { color: white; }
+        button { padding: 5px 10px; background-color: green; color: white; border: none; cursor: pointer; font-size: 14px; }
+        button:hover { background-color: red; }
+        .cart-item { margin: 10px; padding: 10px; border: 1px solid #ccc; text-align: center; }
+        .cart-item img { max-width: 70%; height: auto; border-radius: 5px; margin-bottom: 10px; }
+        .btn { margin: 5px; padding: 5px 10px; background-color: blue; color: white; border: none; cursor: pointer; }
+        .btn:hover { background-color: darkblue; }
+    </style>
+    <script>
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartContainer = document.getElementById('cart-container');
+            cartContainer.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+                document.getElementById('total').textContent = '';
+                return;
+            }
+
+            let total = 0;
+
+            cart.forEach(product => {
+                let productDiv = document.createElement('div');
+                productDiv.className = 'item';
+                productDiv.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>Quantity: ${product.quantity}</p>
+                    <p>Price: Ksh ${product.price}</p>
+                    <button class="btn" onclick="removeFromCart(${product.id})">Remove</button>
+                    <button class="btn" onclick="increaseQuantity(${product.id})">+</button>
+                    <button class="btn" onclick="decreaseQuantity(${product.id})">-</button>
+                `;
+                cartContainer.appendChild(productDiv);
+                total += product.price * product.quantity;
+            });
+
+            document.getElementById('total').textContent = `Total: Ksh ${total}`;
+            updateCartCount();
+        }
+
+        function removeFromCart(productId) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(product => product.id !== productId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        function increaseQuantity(productId) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let product = cart.find(item => item.id === productId);
+            if (product) {
+                product.quantity++;
+                localStorage.setItem('cart', JSON.stringify(cart));
+                loadCart();
+            }
+        }
+
+        function decreaseQuantity(productId) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let product = cart.find(item => item.id === productId);
+            if (product && product.quantity > 1) {
+                product.quantity--;
+                localStorage.setItem('cart', JSON.stringify(cart));
+                loadCart();
+            } else if (product) {
+                removeFromCart(productId);
+            }
+        }
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.getElementById('cart-count').textContent = cart.length;
+        }
+
+        document.addEventListener('DOMContentLoaded', loadCart);
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Shopping Cart</h1>
+    </header>
+    <nav>
+        <table width="100%">
+            <tr>
+                <th><a href="index.html">Home</a></th>
+                <th><a href="products.html">Products</a></th>
+                <th><a href="cart.html">Cart (<span id="cart-count">0</span>)<img src="trolley.jpg" alt="Cart" class="cart-icon"></a></th>
+                <th><a href="login.html">Login</a></th>
+                <th><a href="signup.html">Sign Up</a></th>
+                <th><input type="text" placeholder="Search"></th>
+            </tr>
+        </table>
+    </nav>
+    <section id="shopping-cart">
+        <div id="cart-container" class="product"></div>
+        <p id="total"></p>
+        <button onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
+    </section>
+    <footer>
+        <div class="quick-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="faq.html">FAQs</a>
+        </div>
+        <div class="social-media">
+            <a href="facebook.html">Facebook</a>
+            <a href="instagram.html">Instagram</a>
+            <a href="twitter.html">Twitter</a>
+        </div>
+        <div class="newsletter">
+            <form>
+                <input type="email" placeholder="Sign up for our newsletter">
+                <button type="button" onclick="window.location.href='subscribe.html'">Subscribe</button>
+            </form>
+            <h4>&copy; 2024 Vogue Vault. All rights reserved.</h4>
+        </div>
+    </footer>
+</body>
+</html>

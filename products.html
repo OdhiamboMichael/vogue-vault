@@ -1,0 +1,266 @@
+<html>
+<head>
+    <title>Vogue Vault - Products</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; background-color: #f0f0f0; }
+        header { background-color: violet; color: black; text-align: center; padding: 10px 0; }
+        .product { display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 20px; }
+        .product .item { flex: 0 2 calc(18.05% - 20px); margin-bottom: 20px; text-align: center; background-color: white; padding: 10px; border-radius: 5px; }
+        .product .item img { max-width: 70%; height: auto; border-radius: 5px; margin-bottom: 10px; }
+        nav { background-color: beige; text-align: center; }
+        nav a { color: black; }
+        nav a:hover { text-decoration: underline; }
+        footer {background-color:#2C2D2D; text-align: center;}
+        h4{color:white;}
+        quick-links a, .social-media a { color: blue; margin: 0 10px; text-decoration:underline; }
+        quick-links a:hover, .social-media a:hover { text-decoration: underline; }
+        button { padding: 5px 10px; background-color: green; color: white; border: none; cursor: pointer; font-size: 14px; }
+        button:hover { background-color: red; }
+	p{color:red;}
+	h3{color:red;}
+	
+    </style>
+    <script>
+        function addToCart(productId, productName, productImage, productPrice) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let product = cart.find(item => item.id === productId);
+
+            if (product) {
+                product.quantity++;
+            } else {
+                cart.push({ id: productId, name: productName, image: productImage, price: productPrice, quantity: 1 });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.getElementById('cart-count').textContent = cart.length;
+        }
+
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Vogue Vault - Products</h1>
+    </header>
+    <nav>
+        <table width="100%">
+            <tr>
+                <th><a href="index.html">Home</a></th>
+                <th><a href="products.html">Products</a></th>
+                <th><a href="cart.html">Cart (<span id="cart-count">0</span>)<img src="trolley.jpg" alt="Cart" class="cart-icon"></a></th>
+                <th><a href="login.html">Login</a></th>
+                <th><a href="signup.html">Sign Up</a></th>
+                <th><input type="text" placeholder="Search"></th>
+            </tr>
+        </table>
+    </nav>
+    <section class="product">
+        <div class="item" onclick="addToCart(1, 'Apple Laptop', 'laptop.jpg',28899)">
+            <img src="laptop.jpg">
+            <h3>Apple Laptop</h3>
+		<dl>
+                    <dd>Refurbished Apple MacBook Pro (Mid 2012) Core I5 8GB RAM 500GB HDD 13.3 Inches 2.5GHz Dual Core Laptop.</dd>
+                </dl>
+                <p>Ksh 28,999</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="item" onclick="addToCart(2, 'Smart Watch', 'smartwatch1.jpg',999)">
+            <img src="smartwatch1.jpg">
+            <h3>Smart Watch</h3>
+		<dl>
+                    <dd>This smartwatch seamlessly integrates advanced technology with elegant design, offering a vibrant touchscreen display that showcases notifications, fitness tracking metrics, and customizable watch faces.</dd>
+                </dl>
+                <p>Ksh 999</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="item" onclick="addToCart(3, 'Ailyons Woofer', 'woofer.jpg', 6999)">
+            <img src="woofer.jpg">
+            <h3>Ailyons Woofer </h3>
+		<dl>
+                    <dd>AILYONS ECS2402 woofer Multimedia Speaker With Powerful Amplifier 18000 PMPO Output Power 20W+10W*2【HOT】.</dd>
+                </dl>
+                <p>Ksh 6,999</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="item" onclick="addToCart(4, 'Millitary Boots', 'boots.jpg', 4199)">
+            <img src="boots.jpg">
+            <h3>Millitary Boots</h3>
+		<dl>
+		<dd>ORIGINAL LEATHER SIWAR BOOTS, TACTICAL MILITARY BOOTS, CAMOUFLAGE BOOTS. HEAVY DUTY.</dd>
+		</dl>
+                <p>Ksh4,199</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="item" onclick="addToCart(5, 'Hand Bag', 'handbag.jpg', 499)">
+            <img src="handbag.jpg">
+            <h3>Hand Bag</h3>
+		<dl>
+		<dd> New sling chain portable bag leisure phone handbags for ladies  gift.</dd>
+		</dl>
+                <p>Ksh499</p>
+            <button>Add to Cart</button>
+        </div>
+	<div class="item" onclick="addToCart(6, 'Steel Blender', 'blender.jpg', 5999)">
+            <img src="blender.jpg">
+            <h3>Steel Blender</h3>
+		<dl>
+		<dd> AILYONS 1.5L 2 In 1 Motor Stainless Steel Blender  TYB-201-A Quality With Grinder Juicer White【HOT】.</dd>
+		</dl>
+                <p>Ksh5,999</p>
+            <button>Add to Cart</button>
+        </div>
+	<div class="item" onclick="addToCart(7, 'Men Watch', 'watch3.jpg', 1999)">
+            <img src="watch3.jpg">
+            <h3>Hand Bag</h3>
+		<dl>
+		<dd> This smartwatch seamlessly integrates advanced technology with elegant design, offering a vibrant touchscreen display that showcases notifications, fitness tracking metrics, and customizable watch faces.</dd>
+		</dl>
+                <p>Ksh1,999</p>
+            <button>Add to Cart</button>
+        </div>
+	<div class="item" onclick="addToCart(8, 'Pen Paint Makeup', 'pencil.jpg', 299)">
+            <img src="pencil.jpg">
+            <h3>Pen Paint Makeup</h3>
+		<dl>
+		<dd> 4 Tip Microblading Tattoo Eyebrow Pencil Brow Tattoo Pen Paint Makeup Eyebrows Waterproof Gray Brown.</dd>
+		</dl>
+                <p>Ksh299</p>
+            <button>Add to Cart</button>
+        </div>
+	<div class="item" onclick="addToCart(9, 'MOUNTAIN BIKE', 'bcy.jpg', 49598)">
+            <img src="bcy.jpg">
+            <h3>MOUNTAIN BIKE</h3>
+		<dl>
+		<dd> FOLDABLE MOUNTAIN BIKE BICYCLESIZE 26 WITH DISC BRAKES AND FRONT SUSPENSION AND SHIMANO GEARS.</dd>
+		</dl>
+                <p>Ksh49,598</p>
+            <button>Add to Cart</button>
+        </div>
+	<div class="item" onclick="addToCart(10, 'Apple MacBook', 'apple.jpg', 128999)">
+            <img src="apple.jpg">
+            <h3>Apple MacBook</h3>
+		<dl>
+		<dd> Apple MacBook Pro 13 2017 Core i7 16GB RAM 256GB SSD 13.3 Inch Retina Display 2.8GHz Dual Core A1708 MacOS Refurbished Laptop.</dd>
+		</dl>
+                <p>Ksh128,999</p>
+            <button>Add to Cart</button>
+        </div>
+	<div class="item" onclick="addToCart(11, 'Tripod Stand', 'tripod.jpg', 8120)">
+            <img src="tripod.jpg">
+            <h3>Tripod Stand</h3>
+		<dl>
+		<dd> Tripod Stand Ring Light Phones Selfie Stick Live Bracket Spin Desktop Stabilizer Phone Clip.</dd>
+		</dl>
+                <p>Ksh8,120</p>
+            <button>Add to Cart</button>
+        </div>
+	<div class="item" onclick="addToCart(12, 'Backpack', 'backpack.jpg', 2199)">
+            <img src="backpack.jpg">
+            <h3>Backpack</h3>
+		<dl>
+		<dd> 16 Inch Laptops Backpack USB Business School Bags Anti-Theft Men Women Travel Rucksacks Waterproof Gift Kings Fashion.</dd>
+		</dl>
+                <p>Ksh2,199</p>
+            <button>Add to Cart</button>
+        </div>
+	<div class="item" onclick="addToCart(13, 'Men's Backpack', 'menbag.jpg', 3789)">
+            <img src="menbag.jpg">
+            <h3>Men's Backpack</h3>
+		<dl>
+		<dd> Fashion Men's Large Capacity Backpack Schoolbag Casual Work Commuting Travel Backpack Can Hold 15.6 Inch Computer.</dd>
+		</dl>
+                <p>Ksh3,789</p>
+            <button>Add to Cart</button>
+        </div>
+	<div class="item" onclick="addToCart(14, 'FRAMELESS TELEVISION', 'tv.jpg', 18479)">
+            <img src="tv.jpg">
+            <h3>FRAMELESS TELEVISION</h3>
+		<dl>
+		<dd> Vitron HTC3200S,FRAMELESS TELEVISION Smart Android 11.0, 32" TV Inbuilt Decoder ELECTRONICS HDMI,USB,Netflix,Youtube, APPSTORE + 8 FREE ACCESSORIES.</dd>
+		</dl>
+                <p>Ksh18,479</p>
+            <button>Add to Cart</button>
+        </div>
+	<div class="item" onclick="addToCart(15, 'Welding Machine', 'welding.jpg', 48000)">
+            <img src="welding.jpg">
+            <h3>Welding Machine</h3>
+		<dl>
+		<dd> Makita Accessories Makita Electronic Welding Machine/Welding Inverter.</dd>
+		</dl>
+                <p>Ksh48,000</p>
+            <button>Add to Cart</button>
+        </div>
+	<div class="item" onclick="addToCart(16, 'Electronic Keyboard', 'tripod.jpg', 68099)">
+            <img src="key.jpg">
+            <h3>Electronic Keyboard</h3>
+		<dl>
+		<dd> 61 Keys Electronic Keyboard For Kids,Perfect Birthday Giftwell designed for your child. The main body is made of ABS, safe and friendly to the environment. With the accessory microphone,.</dd>
+		</dl>
+                <p>Ksh68,099</p>
+            <button>Add to Cart</button>
+        </div>
+	<div class="item" onclick="addToCart(17, 'Electric Oven Cooker', 'oven.jpg', 78999)">
+            <img src="oven.jpg">
+            <h3>Electric Oven Cooker</h3>
+		<dl>
+		<dd> Nunix  KZ-560-3G1E   Free Standing 3 Gas  Cooker+1 Hotplate With  Electric Oven Cooker.</dd>
+		</dl>
+		<p>Ksh78,999</p>
+            <button>Add to Cart</button>
+        </div>
+	<div class="item" onclick="addToCart(18, 'TV Aerial', 'aerial.jpg', 459)">
+            <img src="aerial.jpg">
+            <h3>TV Aerial</h3>
+		<dl>
+		<dd> Electronics Accessories Digital TV Aerial + 10mtr Cable + Free Cable Clips Silver one size.</dd>
+		</dl>
+                <p>Ksh459</p>
+            <button>Add to Cart</button>
+        </div>
+	<div class="item" onclick="addToCart(19, 'Fridge', 'fridge.jpg', 118999)">
+            <img src="fridge.jpg">
+            <h3>Fridge</h3>
+		<dl>
+		<dd> Vitron 125L Double Doors Refrigerator VDR128DS Enerygy Saving Fridge and Freezer with 2L Bottle Rack.</dd>
+		</dl>
+                <p>Ksh118,999</p>
+            <button>Add to Cart</button>
+        </div>
+	<div class="item" onclick="addToCart(20, 'Water Dispenser', 'dis.jpg', 8000)">
+            <img src="dis.jpg">
+            <h3>Water Dispenser</h3>
+		<dl>
+		<dd> NUNIX Q7C  Hot and Cold and Normal Free standing water dispenser water dispensers household.</dd>
+		</dl>
+                <p>Ksh8,000</p>
+            <button>Add to Cart</button>
+        </div>
+    </section>
+    <footer>
+        <div class="quick-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="faq.html">FAQs</a>
+        </div>
+        <div class="social-media">
+            <a href="facebook.html">Facebook</a>
+            <a href="instagram.html">Instagram</a>
+            <a href="twitter.html">Twitter</a>
+        </div>
+        <div class="newsletter">
+            <form>
+                <input type="email" placeholder="Sign up for our newsletter">
+                <button><a href="subscribe.html">Subscribe</a></button>
+            </form>
+            <h4>&copy; 2024 Vogue Vault. All rights reserved.</h4>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<html>
+<head>
+    <title>Vogue Vault - Home</title>
+   <style>
+        body {font-family: Arial, sans-serif;
+    		line-height: 1.6;
+    		background-color:white;}
+	header {background-color:violet; 
+    		color:black; 
+   		 text-align:center;
+    		padding: 10px 0;}
+	 .product { display:flex;
+            	flex-wrap:wrap;
+           	 justify-content: space-between;
+            	}
+         .product .item {flex: 0 2 calc(18.05% - 20px);
+           	 margin-bottom:20px;
+            	text-align:center;
+            	background-color:white;
+            	padding:10px;
+            	border-radius:5px;}
+         .product.item img {max-width:100%;
+           	 height: auto;
+            	border-radius:5px;
+            	margin-bottom:10px;}
+	 nav {background-color:beige; 
+    		text-align: center;}
+
+	 nav a {color:black;}
+
+	 nav a:hover {text-decoration: underline;}
+	 form {max-width: 600px;
+           	 margin: 0 auto;}
+	 h2{color:blue;} 
+
+	 h3, p {color:red;}
+	 dl{color:black;}
+	 img {max-width:70%;
+            height: auto;}
+	 button {padding: 5px 10px;
+            	background-color: green;
+            	color: white;
+            	cursor: pointer;
+           	 font-size: 14px;}
+         button:hover {background-color: red;}
+	 input[type="text"], input[type="email"], textarea, select {width: 40%;
+            		padding: 5px;
+           		margin-bottom: 5px;
+            		border: 1px solid white;
+            		border-radius:4px;
+            		box-sizing: border-box;
+            		font-size: 16px;
+            		color: black;}
+	footer {background-color:#2C2D2D;
+    		text-align: center;}
+	.promotions {display:flex;
+            justify-content:space-between;}
+        .promotions.banner {flex:01calc(100%-50px);}
+        .promotions .banner img {max-width: 300%;
+           	 height: auto;
+           	 border-radius: 5px;}
+	h4{color:white;}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Vogue Vault</h1>
+    </header>
+    <nav>
+        <table width="100%">
+            <tr>
+                <th><a href="index.html">Home</a></th>
+                <th><a href="products.html">Products</a></th>
+                <th><a href="cart.html">Cart<span id="cart-count">0</span><img src="trolley.jpg"></a></th>
+		<th><a href="login.html">Login</a></th>  
+       		<th><a href="signup.html">Sign Up</a></th>
+                <th> <input type="text" placeholder="Search"></th>
+            </tr>
+        </table>
+    </nav>
+	 <section>
+        <h2>New Arrivals</h2>
+        <img src="apple.jpg">
+	 <img src="laptop.jpg">
+        <div class="cta-buttons">
+            <button><a href="products.html">Shop Now</a> </button>
+        </div>
+    </section>
+    <section>
+        <h2>Featured Products</h2>
+        <div class="product">
+            <div class="item">
+                <img src="woofer.jpg">
+                <h3>Ailyons Woofer</h3>
+		<dl>
+		<dd> AILYONS ECS2402 woofer Multimedia Speaker With Powerful Amplifier 18000 PMPO Output Power 20W+10W*2【HOT】.</dd>
+		</dl>
+                <p>ksh6,999</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="item">
+                <img src="smartwatch1.jpg">
+                <h3>Smart Watch</h3>
+		<dl>
+		<dd> This smartwatch seamlessly integrates advanced technology with elegant design, offering a vibrant touchscreen display that showcases notifications, fitness tracking metrics, and customizable watch faces.</dd> 
+                <p>Ksh999</p>
+                <button>Add to Cart</button>
+            </div>
+		<div class="item">
+                <img src="welding.jpg">
+                <h3>Welding Machine</h3>
+		<dl>
+		<dd> Makita Accessories Makita Electronic Welding Machine/Welding Inverter.</dd>
+		</dl>
+                <p>Ksh48,000</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="item">
+                <img src="boots.jpg">
+                <h3> Military Boots</h3>
+		<dl>
+		<dd> ORIGINAL LEATHER SIWAR BOOTS, TACTICAL MILITARY BOOTS, CAMOUFLAGE BOOTS. HEAVY DUTY.</dd>
+		</dl>
+                <p>Ksh4,169.99</p>
+                <button>Add to Cart</button>
+            </div>
+	<div class="item">
+                 <img src="cooker.jpg">
+                <h3>Cooker</h3>
+		<dl>
+		<dd> AILYONS GS014-1/GS005A-1 Glass Top Infrared Double Burner Gas stove Super Infrared Heater Saving Gas cooker/ 2300W Double Cooking Plate Stove Gas Ring Hot Plate Cooker.</dd>
+		</dl>
+                <p>Ksh2,879</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </section>
+	 <section id="promotions">
+        <div class="promotions">
+            <div class="banner">
+                <img src="smartwatch1.jpg">
+            </div>
+            <div class="banner">
+                <img src="watch2.jpg">
+            </div>
+       
+    </section>
+
+    <section>
+	<div class="cta-buttons">
+	    <button><a href="products.html">Explore Collections</a></button>
+            <button><a href="signup.html">Sign Up for Offers</a></button>
+        </div>
+        
+    </section>
+
+     <footer>
+         <div class="quick-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+		<a href="faq.html">FAQs</a>
+        </div>
+        <div class="social-media">
+            <a href="facebook.html">Facebook</a>
+            <a href="instagram.html">Instagram</a>
+            <a href="twitter.html">Twitter</a>
+        </div>
+        <div class="newsletter">
+            <form>
+                <input type="email" placeholder="Sign up for our newsletter">
+                <button><a href="subscribe.html">Subscribe</a></button>
+            </form>
+		<h4>&copy; 2024 Vogue Vault. All rights reserved.</h4>
+        </div>
+    </footer>
+</body>
+</html>

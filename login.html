@@ -1,0 +1,112 @@
+<html>
+<head>
+    <title>Vogue Vault - Login</title>
+  <style>
+        body {font-family: Arial, sans-serif;
+    		line-height: 1.6;
+    		background-color:#f0f0f0;}
+	header {background-color:violet; 
+    		color:black; 
+   		 text-align:center;
+    		padding: 10px 0;}
+	 .product { display:flex;
+            	flex-wrap:wrap;
+           	 justify-content: space-between;
+            	margin-bottom: 20px;}
+         .product .item {flex: 0 2 calc(18.05% - 20px);
+           	 margin-bottom:20px;
+            	text-align:center;
+            	background-color:white;
+            	padding:10px;
+            	border-radius: 5px;}
+         .product .item img {max-width:70%;
+           	 height: auto;
+            	border-radius:5px;
+            	margin-bottom:10px;}
+	 nav {background-color:beige; 
+    		text-align: center;}
+
+	 nav a {color:black;}
+
+	 nav a:hover {text-decoration: underline;}
+	 form {max-width: 600px;
+           	 margin: 0 auto;}
+	 h2{color:blue;} 
+
+	 h3, p {color:red;}
+	 dl{color:black;}
+	 img {max-width:70%;
+            height: auto;}
+	 button {padding: 5px 10px;
+            	background-color: green;
+            	color: white;
+           	 border: none;
+            	cursor: pointer;
+           	 font-size: 14px;}
+         button:hover {background-color: red;}
+	 input[type="text"], input[type="email"], textarea, select {width: 40%;
+            		padding: 5px;
+           		margin-bottom: 5px;
+            		border: 1px solid white;
+            		border-radius:4px;
+            		box-sizing: border-box;
+            		font-size: 16px;
+            		color: black;}
+	footer {background-color:#2C2D2D;
+    		text-align: center;}
+	.promotions {display:flex;
+            justify-content:space-between;}
+        .promotions.banner {flex:01calc(100%-50px);}
+        .promotions .banner img {max-width: 200%;
+           	 height: auto;
+           	 border-radius: 5px;}
+	h4{color:white;}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Login to Vogue Vault</h1>
+    </header>
+    <nav>
+        <table width="100%">
+            <tr>
+                <th><a href="index.html">Home</a></th>
+                <th><a href="products.html">Products</a></th>
+                <th><a href="cart.html">Cart  (<span id="cart-count">0</span>)<img src="trolley.jpg" alt="Cart" class="cart-icon"></a></th>
+		<th><a href="login.html">Login</a></th>  
+       		<th><a href="signup.html">Sign Up</a></th>
+                <th> <input type="text" placeholder="Search"></th>
+            </tr>
+        </table>
+    </nav>
+    <section>
+        <h2>Login</h2>
+        <form>
+            <input type="text" placeholder="Username" required><br>
+            <input type="password" placeholder="Password" required><br>
+            <button><a href="index.html">Login</a></button>
+        </form>
+    </section>
+    <footer>
+         <div class="quick-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+		<a href="faq.html">FAQs</a>
+        </div>
+        <div class="social-media">
+            <a href="facebook.html">Facebook</a>
+            <a href="instagram.html">Instagram</a>
+            <a href="twitter.html">Twitter</a>
+        </div>
+        <div class="newsletter">
+            <form>
+                <input type="email" placeholder="Sign up for our newsletter">
+                <button><a href="subscribe.html">Subscribe</a></button>
+            </form>
+		<h4>&copy; 2024 Vogue Vault. All rights reserved.</h4>
+        </div>
+    </footer>
+</body>
+</html>
